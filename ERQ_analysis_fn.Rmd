@@ -1,0 +1,16 @@
+---
+title: "ERQ_analysis_fn"
+output: html_notebook
+---
+
+```{r Load Libraries}
+# load libraries and data
+library(tidyverse)
+source('/Users/ssp160230/github_directory/ERQ/src/ERQ_functions.R')
+erq_test_data <- read_csv('/Users/ssp160230/github_directory/ERQ/data/ERQ_data.csv')
+```
+
+```{r}
+erq_clean <- eclean(erq_test_data)
+erq_mean <- emean(erq_clean_fn)
+```
