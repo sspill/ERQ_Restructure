@@ -2,7 +2,7 @@
 * Repo contains code to analyze data for the Emotional Regualtion Questionnaire (ERQ) measure exported from REDCap
 * ERQ_scratch_pad is what I used to type and test code without cluttering the main notebook I was working on. This can also be ignored.
 
-# Functions
+## Functions
 * eclean(*df*)
   * restructures data frame from wide format to long format
   * input: raw data frame imported from CSV (*eraw_df* in functions script)
