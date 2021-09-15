@@ -13,11 +13,11 @@ eclean <- function(eraw_df){
     separate(variables, c('cr_es', 'q_number'), '_')
   
   # change 'q_number' column from chr to num
-  etotal$Q_number <- as.numeric(etotal$Q_number)
+  etotal$q_number <- as.numeric(etotal$q_number)
   
   # sort by record_id and question number
   etotal_clean <- etotal %>%
-    arrange(record_id, Q_number)
+    arrange(record_id, q_number)
 }
 
 # function to calculate mean scores for cognitive restructuring 
