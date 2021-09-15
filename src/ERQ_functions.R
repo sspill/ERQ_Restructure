@@ -1,4 +1,4 @@
-# create a function to clean raw data frame
+# function to clean raw data frame
 eclean <- function(eraw_df){
   
   # remove unnecessary column for form status
@@ -8,18 +8,20 @@ eclean <- function(eraw_df){
   elong <- ewide %>%
     gather(variables, response, cr_1:cr_10, factor_key = TRUE)
   
-  #separate variables column into cr_es and Q_number
+  #separate variables column into cr_es and q_number
   etotal <- elong %>%
-    separate(variables, c('cr_es', 'Q_number'), '_')
-  etotal$Q_number <- as.numeric(etotal$Q_number) # change 'Q_number' column from chr to num
+    separate(variables, c('cr_es', 'q_number'), '_')
+  
+  # change 'q_number' column from chr to num
+  etotal$Q_number <- as.numeric(etotal$Q_number)
   
   # sort by record_id and question number
   etotal_clean <- etotal %>%
     arrange(record_id, Q_number)
 }
 
-# create function to calculate mean scores for 
-# cognitive restructuring and emotional suppression
+# function to calculate mean scores for cognitive restructuring 
+# and emotional suppression responses
 emean <- function(etotal_clean) {
   etotal_mean_raw <- aggregate(
     cbind(response) ~ record_id + cr_es, 
