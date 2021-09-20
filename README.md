@@ -1,4 +1,5 @@
 # ERQ_Restructure
+### ***Note: README file not yet updated for clean_wide branch***
 * Repo contains code to restructure data for the Emotional Regulation Questionnaire (ERQ) measure exported from REDCap
 
 ## Functions
