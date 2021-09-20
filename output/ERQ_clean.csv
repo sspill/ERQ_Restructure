@@ -1,4 +1,4 @@
-"record_id","cr_es","Q_number","response"
+"record_id","ER_facet","q_number","response"
 "test_1","cr",1,1
 "test_1","es",2,3
 "test_1","cr",3,4

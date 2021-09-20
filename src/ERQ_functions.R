@@ -8,9 +8,9 @@ eclean <- function(eraw_df){
   elong <- ewide %>%
     gather(variables, response, cr_1:cr_10, factor_key = TRUE)
   
-  #separate variables column into cr_es and q_number
+  # separate variables column into ER_facet and q_number
   etotal <- elong %>%
-    separate(variables, c('cr_es', 'q_number'), '_')
+    separate(variables, c('ER_facet', 'q_number'), '_')
   
   # change 'q_number' column from chr to num
   etotal$q_number <- as.numeric(etotal$q_number)
@@ -24,12 +24,12 @@ eclean <- function(eraw_df){
 # and emotional suppression responses
 emean <- function(etotal_clean) {
   etotal_mean_raw <- aggregate(
-    cbind(response) ~ record_id + cr_es, 
+    cbind(response) ~ record_id + ER_facet, 
     data = etotal_clean, 
     FUN = mean
   )
   
   etotal_mean <- etotal_mean_raw %>%
-    spread(cr_es, response)
+    spread(ER_facet, response)
 }
   
