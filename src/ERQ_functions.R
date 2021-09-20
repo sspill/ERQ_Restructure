@@ -29,6 +29,10 @@ emean <- function(etotal_clean) {
     FUN = mean
   )
   
+  # round mean scores to 2 decimals
+  etotal_mean_raw$response <- round(etotal_mean_raw$response, digits = 2)
+  
+  # convert df to wide format
   etotal_mean <- etotal_mean_raw %>%
     spread(ER_facet, response)
 }
